@@ -44,3 +44,5 @@ def verify_that_user_can_register_with_correct_credentials():
     finally:
         browser.quit()
 
+
+verify_that_user_can_register_with_correct_credentials()
