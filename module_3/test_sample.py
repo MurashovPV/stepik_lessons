@@ -3,6 +3,7 @@ import random
 
 start_page_url = "http://selenium1py.pythonanywhere.com/ru/"
 
+alert_success_message_locator = ".wicon"
 login_link_locator = "#login_link"
 
 
@@ -21,7 +22,6 @@ def verify_that_user_can_register_with_correct_credentials():
         password_input_locator = "#id_registration-password1"
         confirm_password_input_locator = "#id_registration-password2"
         register_button_locator = "[name='registration_submit']"
-        successful_registration_locator = ".wicon"
         successful_registration_text = "Спасибо за регистрацию!"
 
         browser.find_element_by_css_selector(login_link_locator).click()
@@ -36,7 +36,7 @@ def verify_that_user_can_register_with_correct_credentials():
 
         # Assert
         browser.find_element_by_css_selector(register_button_locator).click()
-        actual_message_displayed = browser.find_element_by_css_selector(successful_registration_locator).text
+        actual_message_displayed = browser.find_element_by_css_selector(alert_success_message_locator).text
         assert successful_registration_text in actual_message_displayed, \
             "Text informing about successful registration was not displayed"
 
