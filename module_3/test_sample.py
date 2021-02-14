@@ -4,7 +4,6 @@ import random
 start_page_url = "http://selenium1py.pythonanywhere.com/ru/"
 
 login_link_locator = "#login_link"
-logout_lik_locator = "#logout_link"
 
 
 def verify_that_user_can_register_with_correct_credentials():
