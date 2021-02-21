@@ -7,7 +7,7 @@ successful_registration_text = "Спасибо за регистрацию!"
 
 def verify_that_user_can_register_with_correct_credentials():
     # Data
-    email_seed = random.randint(2, 9999)
+    email_seed = random.randint(3, 9999)
     test_email = f"test{email_seed}@test.kz"
     test_password = "ThisPasswordShouldBeFine"
 
