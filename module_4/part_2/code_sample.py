@@ -43,4 +43,4 @@ def test_user_can_register_with_correct_credentials(browser):
     register_button.click()
     alert_message_displayed = browser.find_element_by_css_selector(".wicon").text
     assert successful_registration_text in alert_message_displayed, \
-        "Text informing about successful registration was not displayed"
+        "Successful registration text was not displayed"
