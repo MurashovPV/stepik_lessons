@@ -25,3 +25,6 @@ class ProductPageLocators:
     WRITE_REVIEW = (By.CSS_SELECTOR, "#write_review")
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".add-to-basket")
     ADD_TO_WISHLIST = (By.CSS_SELECTOR, ".btn-wishlist")
+    PRODUCT_ADDED_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(1)")
+    OFFER_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(2)")
+    BASKET_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(3)")
