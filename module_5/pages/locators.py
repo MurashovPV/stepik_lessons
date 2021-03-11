@@ -5,6 +5,11 @@ class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
+class BasePageLocators:
+    BASKET_TOTAL = (By.CSS_SELECTOR, ".basket-mini")
+    VIEW_BASKET = (By.CSS_SELECTOR, ".btn-group")
+
+
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     LOGIN_EMAIL = (By.CSS_SELECTOR, "id_login-username")
@@ -25,6 +30,6 @@ class ProductPageLocators:
     WRITE_REVIEW = (By.CSS_SELECTOR, "#write_review")
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".add-to-basket")
     ADD_TO_WISHLIST = (By.CSS_SELECTOR, ".btn-wishlist")
-    PRODUCT_ADDED_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(1)")
+    PRODUCT_ADDED_IN_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(1) strong")
     OFFER_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(2)")
     BASKET_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(3)")
