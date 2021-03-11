@@ -1,4 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
+from .locators import BasePageLocators
+import math
 
 
 class BasePage:
@@ -16,3 +19,27 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def solve_quiz_and_get_code(self):
+        alert = self.browser.switch_to.alert
+        x = alert.text.split(" ")[2]
+        answer = str(math.log(abs((12 * math.sin(float(x))))))
+        alert.send_keys(answer)
+        alert.accept()
+        try:
+            alert = self.browser.switch_to.alert
+            alert_text = alert.text
+            print(f"Your code: {alert_text}")
+            alert.accept()
+        except NoAlertPresentException:
+            print("No second alert presented")
+
+    def get_basket_total(self):
+        product_price = ""
+        basket_total = self.browser.find_element(*BasePageLocators.BASKET_TOTAL).text
+        for symbol in basket_total:
+            if symbol.isdigit():
+                product_price += symbol
+            elif symbol == "." or symbol == ",":
+                product_price += "."
+        return float(product_price)
