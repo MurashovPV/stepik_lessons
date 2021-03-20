@@ -1,0 +1,112 @@
+{
+  "uid" : "957773d1842a3f60",
+  "name" : "test_guest_can_add_product_to_basket[offer7]",
+  "fullName" : "PycharmProjects.stepik_lessons.module_5.test_product_page.TestProductPage#test_guest_can_add_product_to_basket",
+  "historyId" : "d2adbc387178840828699e6e753eee2b",
+  "time" : {
+    "start" : 1616258792800,
+    "stop" : 1616258797275,
+    "duration" : 4475
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nAssertionError: Wrong product was added into basket.",
+  "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x0000023B378ED610>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f589163d9587431db951a69aa619b4c0\")>\npromo_offer = 'offer7'\n\n    @pytest.mark.parametrize('promo_offer',\n                             [\"offer0\", \"offer1\", \"offer2\", \"offer3\", \"offer4\", \"offer5\", \"offer6\",\n                              pytest.param(\"offer7\", marks=pytest.mark.xfail), \"offer8\",\n                              \"offer9\"])\n    def test_guest_can_add_product_to_basket(self, browser, promo_offer):\n        page = ProductPage(browser, f\"{link}?promo={promo_offer}\")\n        page.open()\n        page.add_to_basket()\n        page.solve_quiz_and_get_code()\n>       page.should_be_added_to_basket()\n\ntest_product_page.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages\\product_page.py:27: in should_be_added_to_basket\n    self.should_add_correct_product()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <module_5.pages.product_page.ProductPage object at 0x0000023B378F98E0>\n\n    def should_add_correct_product(self):\n        product_in_alert = self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_IN_ALERT).text\n>       assert product_in_alert == self.get_product_title(), \"Wrong product was added into basket.\"\nE       AssertionError: Wrong product was added into basket.\n\npages\\product_page.py:24: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1616258791561,
+      "stop" : 1616258792800,
+      "duration" : 1239
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nAssertionError: Wrong product was added into basket.",
+    "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x0000023B378ED610>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f589163d9587431db951a69aa619b4c0\")>\npromo_offer = 'offer7'\n\n    @pytest.mark.parametrize('promo_offer',\n                             [\"offer0\", \"offer1\", \"offer2\", \"offer3\", \"offer4\", \"offer5\", \"offer6\",\n                              pytest.param(\"offer7\", marks=pytest.mark.xfail), \"offer8\",\n                              \"offer9\"])\n    def test_guest_can_add_product_to_basket(self, browser, promo_offer):\n        page = ProductPage(browser, f\"{link}?promo={promo_offer}\")\n        page.open()\n        page.add_to_basket()\n        page.solve_quiz_and_get_code()\n>       page.should_be_added_to_basket()\n\ntest_product_page.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npages\\product_page.py:27: in should_be_added_to_basket\n    self.should_add_correct_product()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <module_5.pages.product_page.ProductPage object at 0x0000023B378F98E0>\n\n    def should_add_correct_product(self):\n        product_in_alert = self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_IN_ALERT).text\n>       assert product_in_alert == self.get_product_title(), \"Wrong product was added into basket.\"\nE       AssertionError: Wrong product was added into basket.\n\npages\\product_page.py:24: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3e33b070a2be7e9b",
+      "name" : "stdout",
+      "source" : "3e33b070a2be7e9b.txt",
+      "type" : "text/plain",
+      "size" : 75
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1616258797339,
+      "stop" : 1616258800077,
+      "duration" : 2738
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail"
+  }, {
+    "name" : "parentSuite",
+    "value" : "PycharmProjects.stepik_lessons.module_5"
+  }, {
+    "name" : "suite",
+    "value" : "test_product_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProductPage"
+  }, {
+    "name" : "host",
+    "value" : "dp25"
+  }, {
+    "name" : "thread",
+    "value" : "16364-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "PycharmProjects.stepik_lessons.module_5.test_product_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "promo_offer",
+    "value" : "'offer7'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail" ]
+  },
+  "source" : "957773d1842a3f60.json",
+  "parameterValues" : [ "'offer7'" ]
+}
