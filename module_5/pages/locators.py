@@ -1,13 +1,17 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
-
 class BasePageLocators:
     BASKET_TOTAL = (By.CSS_SELECTOR, ".basket-mini")
     VIEW_BASKET = (By.CSS_SELECTOR, ".btn-group")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+
+class BasketPageLocators:
+    BASKET_ITEMS = (By.CSS_SELECTOR, "#basket_formset")
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner>p")
 
 
 class LoginPageLocators:
@@ -30,6 +34,7 @@ class ProductPageLocators:
     WRITE_REVIEW = (By.CSS_SELECTOR, "#write_review")
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".add-to-basket")
     ADD_TO_WISHLIST = (By.CSS_SELECTOR, ".btn-wishlist")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1)")
     PRODUCT_ADDED_IN_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(1) strong")
     OFFER_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(2)")
     BASKET_ALERT = (By.CSS_SELECTOR, "#messages > div:nth-child(3)")
