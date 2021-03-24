@@ -1,5 +1,0 @@
-#name
-//input[@name="user_lastname"]
-.third-class
-//input[@mortal_kombat="no_calls_expected"]
-//input[@class="form-control fifth-class"]
