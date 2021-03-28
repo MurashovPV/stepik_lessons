@@ -99,6 +99,16 @@ class TestUserAddToBasketFromProductPage(object):
         # Assert
         page.should_be_added_to_basket()
 
+    @pytest.mark.personal_tests
+    def test_user_cant_add_unavailable_product_to_basket(self, browser):
+        # Arrange
+        link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+        page = ProductPage(browser, link)
+        # Act
+        page.open()
+        # Assert
+        page.should_not_be_add_to_basket_button()
+
     def test_user_cant_see_success_message(self, browser):
         # Arrange
         page = ProductPage(browser, link)
