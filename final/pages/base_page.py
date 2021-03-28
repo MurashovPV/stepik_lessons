@@ -49,12 +49,29 @@ class BasePage:
             return True
         return False
 
+    def logout(self):
+        logout_link = self.browser.find_element(*BasePageLocators.LOGOUT_LINK)
+        logout_link.click()
+
+    def navigate_to_main_page(self):
+        main_page_link = self.browser.find_element(*BasePageLocators.OSCAR_LINK)
+        main_page_link.click()
+
     def open(self):
         self.browser.get(self.url)
+
+    def search_product(self, product):
+        search_input = self.browser.find_element(*BasePageLocators.SEARCH_INPUT)
+        search_button = self.browser.find_element(*BasePageLocators.SEARCH_BUTTON)
+        search_input.send_keys(product)
+        search_button.click()
 
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
+
+    def should_be_logged_out(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not displayed after logout attempt"
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
