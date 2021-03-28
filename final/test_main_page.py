@@ -38,3 +38,16 @@ class TestMainPage:
         page.open()
         # Assert
         page.should_be_login_link()
+
+    @pytest.mark.personal_tests
+    def test_user_can_logout(self, browser):
+        # Arrange
+        page = MainPage(browser, link)
+        login_page = LoginPage(browser, browser.current_url)
+        # Act
+        page.open()
+        page.go_to_login_page()
+        login_page.register_new_user("super@test.kz", "ThisPasswordShouldBeFine")
+        page.logout()
+        # Assert
+        page.should_be_logged_out()
