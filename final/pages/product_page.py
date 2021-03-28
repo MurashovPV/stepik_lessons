@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+from selenium.common.exceptions import NoSuchElementException
 
 
 class ProductPage(BasePage):
@@ -27,9 +28,20 @@ class ProductPage(BasePage):
         self.should_add_correct_product()
         self.should_update_overall_price()
 
+    def should_contain_search_string(self, search_string):
+        try:
+            self.browser.find_element_by_xpath(f"//*[contains(lower-case(.), {search_string}]")
+        except NoSuchElementException:
+            return False
+        return True
+
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should disappear"
+
+    def should_not_be_add_to_basket_button(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADD_TO_BASKET), "Add to basket button is available " \
+                                                                                "but should not be"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
